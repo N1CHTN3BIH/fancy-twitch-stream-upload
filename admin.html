@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Admin CP</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container">
+		<div class="divider" style="height: 100px; width: 50px;"></div>
+		<div class="form-group">
+			<label for="exampleFormControlSelect1">Stream Time selection</label> </br>
+			<span>Bedenke: Wenn du deinen Browserverlauf löschst oder den Cache + Cookies, wird der Standartwert auf 5 Minuten gesetzt. <b>Bitte bedenke zudem, dass du einen Wert im hundertstel angibst: 5 Minuten wären 500, 10 Minuten 10000.</b></span>
+			<select class="form-control" id="optionsId">
+				<option value="100">1</option>
+				<option value="300">3</option>
+				<option value="500">5</option>
+				<option value="800">8</option>
+				<option value="1000">10</option>
+				<option value="2000">20</option>
+			</select>
+		</div>		
+		<div class="form-group">
+		</div>
+		<button type="submit" class="btn btn-large" id="save">Save</button>
+
+	</div>
+	<script type="text/javascript" src="scripts/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="scripts/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+html{
+  -webkit-font-smoothing: antialiased;
+  font-family: Verdana;
+  background: url('../bg.gif');
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100%;
+  height: 100%;
+  overflow: hidden;
+  cursor: none;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+            supported by Chrome and Opera */
+          }
+
+          .finished{
+            display: none;
+          }
+
+          .text-style-retro{
+            font-size: 40px;
+            color: white;
+          }
+
+          .layer{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            opacity: 0.2;
+          }
+
+          body{
+            min-height: 100%;
+            height: 100%;
+            background: #000000a6;
+            margin: 0;
+          }
+
+
+          .wrapper{
+            text-align: center;
+            overflow: hidden;
+            height: 709px;
+            padding: 50px;
+            position: relative;
+          }
+
+          #countdownheadline{
+            display: none;
+          }
+
+          #progressBar {
+            bottom: 0px;
+            width: 100%;
+            margin: 10px;
+            height: 60px;
+            border-radius: 5px;
+            position: relative;
+          }
+
+          .kidwrap{
+            margin-top: 184px;
+          }
+
+          #progressBar h2{
+            white-space: nowrap;
+            text-align: center;
+            color: white;
+            width: 100%;
+            position: absolute;
+            bottom: -4px;
+            letter-spacing: 20px;
+          }
+
+          #progressBar div {
+            border-radius: 5px;
+            height: 100%;
+            text-align: right;
+            line-height: 22px; /* same as #progressBar height if we want text middle aligned */
+            width: 0;
+            box-sizing: border-box;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+          }
+
+          /* Do not take in account */
+          a.solink{position:fixed;top:0;width:100%;text-align:center;background:#f3f5f6;color:#cfd6d9;border:1px solid #cfd6d9;line-height:30px;text-decoration:none;transition:all .3s;z-index:999}a.solink::first-letter{text-transform:capitalize}a.solink:hover{color:#428bca}
