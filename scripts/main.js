@@ -38,25 +38,12 @@ var pSBC = function (p, from, to) {
 
 	//Below this, only for developers - I know its not best practise, but its working though. 
 
-	var streamValue = localStorage.getItem('streamValue');
+	var stringToNumber = dataChunk[4] + '00';
+	var streamValue = parseInt(stringToNumber);
+
+	console.log(streamValue);
 	$('#progressBar').css('background-color', color);
 	$('.layer').css('background-color', backgroundColorProgressBar);
-
-	//templates for multiple time settings.
-	if(window.location.href.indexOf("/ten/") > -1 && streamValue !== "1000") {
-		localStorage.setItem('streamValue', 1000);
-		location.reload();
-	}else if(window.location.href.indexOf("/twenty/") > -1 && streamValue !== "2000"){
-		localStorage.setItem('streamValue', 2000);
-		location.reload();
-		//test
-	}else if((window.location.href.indexOf("/one/") > -1) && streamValue !== "1"){
-		localStorage.setItem('streamValue', 1);
-		location.reload();
-	}else if((window.location.href.indexOf("/five/") > -1) && streamValue !== "500"){
-		localStorage.setItem('streamValue', 500);
-		location.reload();
-	}
 
 	$('.text-style-retro').html(headline).css('text-shadow', '2px 2px ' + backgroundColorProgressBar);
 
