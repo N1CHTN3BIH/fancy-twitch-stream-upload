@@ -5,8 +5,6 @@ var firstVisit = localStorage.getItem("firstVisit");
 
 if(!firstVisit){
 	window.location.href = "admin.html";
-}else{
-	return;
 }
 
 //Hex manipulator
