@@ -3,10 +3,11 @@ $( document ).ready(function() {
 
 var firstVisit = localStorage.getItem("firstVisit");
 
-if(!firstVisit){
+var dataChunk = window.location.href.split('&');
+
+if(!firstVisit && !dataChunk.indexOf("customsettings") !== -1){
 	window.location.href = "admin.html";
 }
-
 //Hex manipulator
 var pSBC = function (p, from, to) {
     if(typeof(p)!="number"||p<-1||p>1||typeof(from)!="string"||(from[0]!='r'&&from[0]!='#')||(to&&typeof(to)!="string"))return null; //ErrorCheck
@@ -30,7 +31,7 @@ var pSBC = function (p, from, to) {
 }
 
 
-	var dataChunk = window.location.href.split('&');
+	dataChunk = window.location.href.split('&');
 	//HELLO DEAR TWITCH USER. Yes, right, you can change your headline and color down below :-) Have fun!
 	//You don't have to give me credits, but I would apreciate it. A follow on twitch would be awesome too. Have fun with the countdown. :-)
 	var headline = decodeURI(dataChunk[1]);
