@@ -6,23 +6,20 @@
 </head>
 <body>
 	<div class="container">
-		<div class="divider" style="height: 100px; width: 50px;"></div>
-		<div class="form-group">
-			<label for="exampleFormControlSelect1">Stream Time selection</label> </br>
-			<span>Bedenke: Wenn du deinen Browserverlauf löschst oder den Cache + Cookies, wird der Standartwert auf 5 Minuten gesetzt. <b>Bitte bedenke zudem, dass du einen Wert im hundertstel angibst: 5 Minuten wären 500, 10 Minuten 10000.</b></span>
-			<select class="form-control" id="optionsId">
-				<option value="100">1</option>
-				<option value="300">3</option>
-				<option value="500">5</option>
-				<option value="800">8</option>
-				<option value="1000">10</option>
-				<option value="2000">20</option>
-			</select>
-		</div>		
-		<div class="form-group">
-		</div>
-		<button type="submit" class="btn btn-large" id="save">Save</button>
 
+		<div class="divider" style="height: 100px; width: 50px;"></div>
+		<h1>Enter all data please.</h1>
+
+		<div class="form-group">
+			<input type="text" placeholder="NAME" name="name" id="name">
+			<input type="text" placeholder="HEX CODE" name="color" id="color" maxlength="6">
+			<input type="number" placeholder="MINUTES" name="duration" id="duration">
+			<input type="text" placeholder="IMAGE LINK" name="image" id="image">
+
+		</div>		
+		<button type="submit" class="btn btn-large" id="save">Generate your link!</button>
+		<div id="link"></div>
+		<div id="error"></div>
 	</div>
 	<script type="text/javascript" src="scripts/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="scripts/admin.js"></script>
