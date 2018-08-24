@@ -1,7 +1,6 @@
 html{
   -webkit-font-smoothing: antialiased;
   font-family: Verdana;
-  background: url('../bg.gif');
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 100%;
@@ -32,7 +31,7 @@ html{
             height: 100%;
             margin: 0;
             padding: 0;
-            opacity: 0.2;
+            opacity: 0.1;
           }
 
           body{
