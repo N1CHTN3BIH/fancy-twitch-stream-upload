@@ -5,9 +5,6 @@ var firstVisit = localStorage.getItem("firstVisit");
 
 var dataChunk = window.location.href.split('&');
 
-if(!firstVisit && dataChunk.indexOf("customsettings") !== -1){
-	window.location.href = "admin.html";
-}
 //Hex manipulator
 var pSBC = function (p, from, to) {
     if(typeof(p)!="number"||p<-1||p>1||typeof(from)!="string"||(from[0]!='r'&&from[0]!='#')||(to&&typeof(to)!="string"))return null; //ErrorCheck
