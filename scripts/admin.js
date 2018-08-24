@@ -6,7 +6,7 @@ $('#save').on('click', function(){
     var duration = $('#duration').val();
     var image = $('#image').val();
 
-    var url = window.location.hostname + '/fancy-twitch-stream-upload/index.html?customsettings' + '&' + name + '&' + color + '&' + image + '&' + duration; 
+    var url = '/fancy-twitch-stream-upload/index.html?customsettings' + '&' + name + '&' + color + '&' + image + '&' + duration; 
 
     if(name.length >=1 && color.length >=1  && duration.length >=1  && image.length >=1 ){
             $('#link').html('<a href="' + url + '" target=_blank>' + url + '</a>');
