@@ -96,6 +96,7 @@ $('#save').on('click', function(){
     addEntry();
     ini();
     getSavedDesigns();
+    localStorage.setItem("firstVisit", false);
 
 });
 
