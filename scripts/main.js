@@ -5,7 +5,7 @@ var firstVisit = localStorage.getItem("firstVisit");
 
 var dataChunk = window.location.href.split('&');
 
-if(!firstVisit && !dataChunk.indexOf("customsettings") !== -1){
+if(!firstVisit && dataChunk.indexOf("customsettings") !== -1){
 	window.location.href = "admin.html";
 }
 //Hex manipulator
