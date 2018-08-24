@@ -30,7 +30,27 @@ var ini = function(){
 
 }
 
-ini();
+
+var getSavedDesigns = function(){
+    var ls = localStorage.myDesigns;
+    var array = JSON.parse(ls);
+
+    var match = $('#name').val() && $('#color').val() && $('#duration').val() && $('#image').val()
+
+    if(match){
+        var newHTML = [];
+        $.each(array, function(index, value) {
+            newHTML.push('<li><a href="' + value.url + '" target=_blank>' + value.name + '</a> <span id="' + index + '" style="float: right; cursor: pointer;"></span></li>');
+        });
+        $(".element").html(newHTML.join("")); 
+    }
+
+}
+
+$('#kill').on("click", function(){
+    localStorage.clear();
+    location.reload();
+});
 
 $('#save').on('click', function(){
 
@@ -48,11 +68,36 @@ $('#save').on('click', function(){
 
 
     if(name.length >=1 && color.length >=1  && duration.length >=1  && image.length >=1 ){
-        $('#link').html('<a href="' + url + '" target=_blank>' + url + '</a>');
+        $('#link').html('<a href="' + url + '" target=_blank>' + name + ' < template, click here </a>');
         $('#error').html(' ');
     }else{
         $('#link').html(' ')
         $('#error').html('Please fill all the inputs..');
     }
+
+    function addEntry() {
+        var match = $('#name').val() && $('#color').val() && $('#duration').val() && $('#image').val()
+        var existingEntries = JSON.parse(localStorage.getItem("myDesigns"));
+        if(existingEntries == null) existingEntries = [];
+        var nameDesign = name;
+        var urlDesign = url;
+        var entry = {
+            "name": nameDesign,
+            "url": urlDesign
+        };        
+
+        if(match){
+            localStorage.setItem("entry", JSON.stringify(entry));
+            existingEntries.push(entry);
+            localStorage.setItem("myDesigns", JSON.stringify(existingEntries));
+        }
+    };
+
+    addEntry();
     ini();
+    getSavedDesigns();
+
 });
+
+ini();
+getSavedDesigns();
