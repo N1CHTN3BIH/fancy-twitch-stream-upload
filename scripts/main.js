@@ -1,6 +1,15 @@
 $( document ).ready(function() {
 
 
+var firstVisit = localStorage.getItem("firstVisit");
+
+if(!firstVisit){
+	window.location.href = "admin.html";
+	localStorage.setItem("firstVisit", false);
+}else{
+	return;
+}
+
 //Hex manipulator
 var pSBC = function (p, from, to) {
     if(typeof(p)!="number"||p<-1||p>1||typeof(from)!="string"||(from[0]!='r'&&from[0]!='#')||(to&&typeof(to)!="string"))return null; //ErrorCheck
