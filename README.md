@@ -14,3 +14,8 @@ Line 29 and 31. Make sure to write a valid hex code.
 I have prepared 4 versions. A one minute, five minute, 10 minute and a 20 minute version. If you want to enable a specific one, make sure to change the URL in the Streamlabs settings from (example) twitchCountdown-master/index.html to twitchCountdown-master/five/index.html. This will enable a five minute stream duration.
 
 If you have questions, feel free to contact me in my twitch chat or send me an mail here at Github (twitch.tv/nebih)
+
+# Or you simply want to download NOTHING and just run this with a custom url?
+https://n1chtn3bih.github.io/fancy-twitch-stream-upload/admin.html
+
+
