@@ -1,11 +1,4 @@
 
-var generateUrlIFrame = function(){
-    var parse = JSON.parse(localStorage.myDesigns);
-    window.getLatestUrl = parse[parse.length -1].url;
-};
-
-generateUrlIFrame();
-
 var ini = function(){
 
     var localName = localStorage.getItem('name');
@@ -36,16 +29,6 @@ var ini = function(){
     }
 
 }
-
-var iFrame = function(){
-
-
-    if(window.getLatestUrl){
-        $('.iframe').html('<iframe src="' + window.getLatestUrl + '" id="myFrame" frameborder="0" scrolling="yes" style="width: 1280px; height: 720px;"></iframe>')
-    }
-
-};
-
 
 
 var getSavedDesigns = function(){
@@ -85,7 +68,7 @@ $('#save').on('click', function(){
 
 
     if(name.length >=1 && color.length >=1  && duration.length >=1  && image.length >=1 ){
-        $('#link').html('<a href="' + window.getLatestUrl + '" target=_blank>' + name + ' < template, click here </a>');
+        $('#link').html('<a href="' + url + '" target=_blank>' + name + ' < template, click here </a>');
         $('#error').html(' ');
     }else{
         $('#link').html(' ')
@@ -110,17 +93,12 @@ $('#save').on('click', function(){
         }
     };
 
-    window.getLatestUrl = url;
-
     addEntry();
     ini();
     getSavedDesigns();
-    generateUrlIFrame();
-    iFrame();
     localStorage.setItem("firstVisit", false);
 
 });
 
-iFrame();
 ini();
 getSavedDesigns();
