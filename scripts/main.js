@@ -43,7 +43,7 @@ var pSBC = function (p, from, to) {
 	var progressBarTextFinishedValue = dataChunk[4];
 	var progressBarTextFinished = decodeURI(progressBarTextFinishedValue);
 	var progressBarTextValue = dataChunk[5];
-	var progressBarText = decodeURI(progressBarText);
+	var progressBarText = decodeURI(progressBarTextValue);
 	//enable for dev
 	//backgroundImage = 'https://media.giphy.com/media/gVugMt28Vyk92/giphy.gif'; 
 
