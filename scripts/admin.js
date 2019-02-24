@@ -5,6 +5,8 @@ var ini = function(){
     var localColor = localStorage.getItem('color');
     var localDuration = localStorage.getItem('duration');
     var localImage = localStorage.getItem('image');
+    var localProgressTextLoading = localStorage.getItem('uploadRunning');
+    var localProgressFinished = localStorage.getItem('uploadFinished');
 
     if(localName){
         $('#name').val(localName);
@@ -20,6 +22,14 @@ var ini = function(){
 
     if(localImage){
         $('#image').val(localImage);
+    }
+
+    if(localProgressTextLoading){
+        $('#uploadRunning').val(localProgressTextLoading);
+    }
+
+    if(localProgressFinished){
+        $('#uploadFinished').val(localProgressFinished);
     }
 
     if(!localStorage){
@@ -57,16 +67,20 @@ $('button#save').on("click", function(){
     var color = $('#color').val();
     var duration = $('#duration').val();
     var image = $('#image').val();
+    var uploadRunning = $('#uploadRunning').val();
+    var uploadFinished = $('#uploadFinished').val();
 
     localStorage.setItem('name', name);
     localStorage.setItem('color', color);
     localStorage.setItem('duration', duration);
     localStorage.setItem('image', image);
+    localStorage.setItem('uploadRunning', uploadRunning);
+    localStorage.setItem('uploadFinished', uploadFinished);
 
-    var url = '/fancy-twitch-stream-upload/index.html?customsettings' + '&' + name + '&' + color + '&' + image + '&' + duration;
+    var url = '/fancy-twitch-stream-upload/index.html?customsettings' + '&' + name + '&' + color + '&' + image + '&' + duration + '&' + uploadFinished + '&' + uploadRunning;
 
 
-    if(name.length >=1 && color.length >=1  && duration.length >=1  && image.length >=1 ){
+    if(name.length >=1 && color.length >=1  && duration.length >=1  && image.length >=1 && uploadRunning.length >=1 && uploadFinished.lenght >=1){
         $('#link').html('<a href="' + window.getLatestUrl + '" target=_blank>' + name + ' < template, click here </a>');
         $('#error').html(' ');
     }else{
@@ -75,7 +89,7 @@ $('button#save').on("click", function(){
     }
 
     function addEntry() {
-        var match = $('#name').val() && $('#color').val() && $('#duration').val() && $('#image').val()
+        var match = $('#name').val() && $('#color').val() && $('#duration').val() && $('#image').val() && $('#uploadRunning').val() && $('#uploadFinished').val()
         var existingEntries = JSON.parse(localStorage.getItem("myDesigns"));
         if(existingEntries == null) existingEntries = [];
         var nameDesign = name;
