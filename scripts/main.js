@@ -40,8 +40,10 @@ var pSBC = function (p, from, to) {
 	//backgroundColorProgressBar = '#FF0000';
 	var color = pSBC(-0.8, backgroundColorProgressBar);
 	var backgroundImage = dataChunk[3];
-	var progressBarTextFinished = dataChunk[4];
-	var progressBarText = dataChunk[5];
+	var progressBarTextFinishedValue = dataChunk[4];
+	var progressBarTextFinished = decodeURI(progressBarTextFinishedValue);
+	var progressBarTextValue = dataChunk[5];
+	var progressBarText = decodeURI(progressBarText);
 	//enable for dev
 	//backgroundImage = 'https://media.giphy.com/media/gVugMt28Vyk92/giphy.gif'; 
 
@@ -56,7 +58,6 @@ var pSBC = function (p, from, to) {
 	//streamValue = 50;
 	$('#progressBar').css('background-color', color);
 	$('.layer').css('background-color', backgroundColorProgressBar);
-	$('.loading').css('background-color', backgroundColorProgressBar);
 
 	$('.text-style-retro').html(headline).css('text-shadow', '10px 7px ' + backgroundColorProgressBar);
 	$('.loading').html(progressBarText);
