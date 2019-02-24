@@ -1,6 +1,6 @@
 html{
   -webkit-font-smoothing: antialiased;
-  font-family: Verdana;
+  font-family: 'Press Start 2P', cursive;
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 100%;
@@ -74,7 +74,7 @@ html{
             width: 100%;
             position: absolute;
             bottom: -4px;
-            letter-spacing: 20px;
+            letter-spacing: 5px;
           }
 
           #progressBar div {
