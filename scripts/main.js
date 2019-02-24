@@ -51,7 +51,7 @@ var pSBC = function (p, from, to) {
 	//Below this, only for developers - I know its not best practise, but its working though. 
 
 	var stringToNumber = dataChunk[4] + '00';
-	var streamhue = parseInt(stringToNumber);
+	var streamValue = parseInt(stringToNumber);
 	//enable for dev settings
 	//streamValue = 50;
 	$('#progressBar').css('background-color', color);
